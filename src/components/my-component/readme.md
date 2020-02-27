@@ -14,6 +14,19 @@
 | `middle` | `middle`  | The middle name | `string` | `undefined` |
 
 
+## Dependencies
+
+### Depends on
+
+- [hermano-feo](../feo)
+
+### Graph
+```mermaid
+graph TD;
+  my-component --> hermano-feo
+  style my-component fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
