@@ -10,6 +10,9 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface HermanoFeo {
+    'text': string;
+  }
   interface MyComponent {
     /**
     * The first name
@@ -29,17 +32,27 @@ export namespace Components {
 declare global {
 
 
+  interface HTMLHermanoFeoElement extends Components.HermanoFeo, HTMLStencilElement {}
+  var HTMLHermanoFeoElement: {
+    prototype: HTMLHermanoFeoElement;
+    new (): HTMLHermanoFeoElement;
+  };
+
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
     prototype: HTMLMyComponentElement;
     new (): HTMLMyComponentElement;
   };
   interface HTMLElementTagNameMap {
+    'hermano-feo': HTMLHermanoFeoElement;
     'my-component': HTMLMyComponentElement;
   }
 }
 
 declare namespace LocalJSX {
+  interface HermanoFeo {
+    'text'?: string;
+  }
   interface MyComponent {
     /**
     * The first name
@@ -56,6 +69,7 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'hermano-feo': HermanoFeo;
     'my-component': MyComponent;
   }
 }
@@ -66,6 +80,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
+      'hermano-feo': LocalJSX.HermanoFeo & JSXBase.HTMLAttributes<HTMLHermanoFeoElement>;
       'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
     }
   }

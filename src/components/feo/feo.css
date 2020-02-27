@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: greenyellow;
+  padding: 1rem;
+}
+
+.my-feo {
+  background-color: pink;
+  color: white;
+  font-size: 2rem;
+  height: 5rem;
+  width: 8rem;
+  border-radius: 15px;
+}
